@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="./css/owfont-regular.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>momentum</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="player-container invisible">
+        <div class="player">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+          <ul class="play-list"></ul>
+        </div>
+        <div class="player-progress-container">
+          <marquee class="title"></marquee>
+          <div class="progress-bar">
+            <input type="range" max="1" min="0" step="0.001" value="0" class="progress" />
+            <div class="timer-container">
+              <span class="current-time">00:00</span>
+              /
+              <span class="duration">00:00</span>
+            </div>
+          </div>
+          <div class="volume-container">
+            <button class="volume-button"></button>
+            <input type="range" max="100" min="0" step="1" value="80" class="volume-range" />
+          </div>
+        </div>
+      </div>
+      <div class="weather invisible">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time invisible"></time>
+      <date class="date invisible"></date>
+      <div class="greeting-container invisible">
+        <span class="greeting-text"></span>
+        <input type="text" class="name" />
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="settings-container">
+        <div class="settings">
+          <div class="language settings-section">
+            <h3 class="settings-header" id="language">Language</h3>
+            <div class="language-input-container"><input class="settings-radio-lang" id="language-en" type="radio" name="language" /> <label for="language-en">English</label></div>
+            <div class="language-input-container"><input class="settings-radio-lang" id="language-ru" type="radio" name="language" /> <label for="language-ru">Русский</label></div>
+          </div>
+          <div class="settings-line"></div>
+          <div class="visible settings-section">
+            <h3 class="settings-header" id="visible">Visible</h3>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-time">Time</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="time-setting" class="onoffswitch-checkbox" id="time-visible" />
+                <label class="onoffswitch-label" for="time-visible"></label>
+              </div>
+            </div>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-date">Date</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="date-setting" class="onoffswitch-checkbox" id="date-visible" />
+                <label class="onoffswitch-label" for="date-visible"></label>
+              </div>
+            </div>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-greeting">Greeting</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="greeting-setting" class="onoffswitch-checkbox" id="greeting-visible" />
+                <label class="onoffswitch-label" for="greeting-visible"></label>
+              </div>
+            </div>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-quote">Quote</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="quote-setting" class="onoffswitch-checkbox" id="quote-visible" />
+                <label class="onoffswitch-label" for="quote-visible"></label>
+              </div>
+            </div>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-weather">Weather</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="weather-setting" class="onoffswitch-checkbox" id="weather-visible" />
+                <label class="onoffswitch-label" for="weather-visible"></label>
+              </div>
+            </div>
+            <div class="visible-item-container">
+              <span class="visible-item-title" id="visible-audio">Audio</span>
+              <div class="onoffswitch">
+                <input type="checkbox" name="audio-setting" class="onoffswitch-checkbox" id="audio-visible" />
+                <label class="onoffswitch-label" for="audio-visible"></label>
+              </div>
+            </div>
+          </div>
+          <div class="settings-line"></div>
+          <div class="image-API settings-section">
+            <h3 class="settings-header" id="img-source">Image source</h3>
+            <div><input data-img-source="github" class="settings-radio-img" id="image-github" type="radio" name="image-API" /> <label for="image-github">GitHub</label></div>
+            <div><input data-img-source="unsplash" class="settings-radio-img" id="image-unsplash" type="radio" name="image-API" /> <label for="image-unsplash">Unsplash</label></div>
+            <div><input data-img-source="flickr" class="settings-radio-img" id="image-flickr" type="radio" name="image-API" /> <label for="image-flickr">Flickr</label></div>
+            <div class="tags-container">
+              <h4 class="tags-header">Tags:</h4>
+              <span class="tags-description">Enter tags separated by commas</span>
+              <input class="tags-input" type="text" />
+            </div>
+          </div>
+        </div>
+        <button class="settings-button active"></button>
+      </div>
+      <div class="quote-container invisible">
+        <button class="change-quote"></button>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+      <div class="logo-container">
+        <div class="logo-icon-container">
+          <div class="footer-github">
+            <a href="https://github.com/Pecheneg95"><img class="logo-github" src="./assets/svg/github_logo.svg" alt="Github logo" /></a>
+            <a href="https://github.com/Pecheneg95">Pecheneg95</a>
+          </div>
+          <a href="https://rs.school/js/"><img class="logo-rs_school" src="./assets/svg/rs_school_js.svg" alt="Logo rs-school" /></a>
+        </div>
+        <span class="created">Created in 2022</span>
+      </div>
+    </footer>
+  </body>
+</html>

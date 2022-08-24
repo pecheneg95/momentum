@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "description": "My new js application",
+  "private": true,
+  "name": "my-app",
+  "scripts": {
+    "start": "rss-scripts start -ts",
+    "build": "rss-scripts build -ts"
+  },
+  "devDependencies": {
+    "rss-scripts": "^0.2.4"
+  },
+  "dependencies": {
+    "i18next": "^21.9.0"
+  }
+}
